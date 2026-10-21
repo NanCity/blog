@@ -3,7 +3,7 @@ title: "年少有为"
 date: "2026-10-21"
 category: "生活随笔"
 tags: ["青春", "回忆", "成长"]
-cover: "assets/nsyw.png"
+cover: "assets/nsyw.jpg"
 excerpt: "年少有为的故事"
 draft: false
 ---
