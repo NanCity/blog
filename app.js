@@ -4,7 +4,7 @@ const main=document.querySelector('main');let activeCategory='全部';let toastT
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const categories=()=>[...new Set(['全部','技术手记','生活随笔','灵感碎片',...posts.map(p=>p.category)])];
 const emptyPosts=()=>'<div class="empty">还没有发布文章。<br>第一篇文字，正在路上。</div>';
-const date=s=>s.replaceAll('-','.');const art=(name,alt='',cls='cover')=>`<div class="${cls}"><img src="assets/${name}.svg" alt="${alt}" loading="lazy"></div>`;
+const date=s=>s.replaceAll('-','.');const art=(name,alt='',cls='cover')=>`<div class="${cls}"><img src="${esc(name.startsWith('assets/')?name:`assets/${name}.svg`)}" alt="${alt}" loading="lazy"></div>`;
 function meta(p){return `<div class="meta"><span class="category">${esc(p.category)}</span><i class="dot"></i><time datetime="${p.date}">${date(p.date)}</time></div>`}
 function card(p){return `<article class="post-card"><a href="#post/${p.id}" aria-label="阅读：${esc(p.title)}">${art(p.cover,esc(p.title))}</a>${meta(p)}<h3><a href="#post/${p.id}">${esc(p.title)}</a></h3><p class="excerpt">${esc(p.excerpt)}</p><div class="card-bottom"><span>${p.time} 分钟阅读</span><a class="read-link" href="#post/${p.id}" aria-label="阅读：${esc(p.title)}">阅读全文 <b>↗</b></a></div></article>`}
 function filters(){return `<div class="filters" role="group" aria-label="文章分类">${categories().map(c=>`<button class="filter ${activeCategory===c?'active':''}" data-category="${esc(c)}" aria-pressed="${activeCategory===c}">${esc(c)}<small>${c==='全部'?posts.length:posts.filter(p=>p.category===c).length}</small></button>`).join('')}</div>`}

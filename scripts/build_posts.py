@@ -53,7 +53,16 @@ def read_post(path):
         raise ValueError("tags must be a list of non-empty strings")
     cover = text_field(meta, "cover", "desk")
     if cover not in COVERS:
-        raise ValueError(f"cover must be one of {sorted(COVERS)}")
+        cover_path = (ROOT / cover).resolve()
+        assets_path = (ROOT / "assets").resolve()
+        if (
+            not cover.startswith("assets/")
+            or "\\" in cover
+            or not cover_path.is_relative_to(assets_path)
+            or cover_path.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp", ".svg"}
+            or not cover_path.is_file()
+        ):
+            raise ValueError("cover must be a built-in name or an existing image inside assets/")
     body = match[2].strip()
     if not body:
         raise ValueError("article body is empty")

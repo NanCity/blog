@@ -57,7 +57,7 @@ git push origin main
 - `title`、`date` 必填，日期格式为 `YYYY-MM-DD`。文章按日期倒序排列。
 - `category` 可自定义，默认“技术手记”；分类列表会自动更新。
 - `tags` 使用数组，例如 `["Qt", "视频"]`。
-- `cover` 可选 `desk`、`hills`、`leaves`、`coffee`，默认 `desk`。
+- `cover` 可选 `desk`、`hills`、`leaves`、`coffee`，默认 `desk`；也可写仓库中实际存在的图片路径，例如 `"assets/nsyw.png"`，并一起提交图片。
 - `excerpt` 是列表中的摘要，省略时使用标题。阅读时长自动估算。
 - `draft: true` 不发布正文，也不会出现在搜索和归档中；但提交到公开仓库的 Markdown 源文件仍然公开。
 - 日期用于排序，未来日期不会自动定时发布；需要暂存时请用 `draft: true`。
