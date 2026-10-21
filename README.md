@@ -13,6 +13,8 @@
 
 ## GitHub Pages
 
+博客访问地址：<https://nancity.github.io/blog/>（首次部署成功后生效）。
+
 静态文件已位于仓库根目录。在仓库 Settings → Pages 中选择 Deploy from a branch，选择 main 分支与 / (root) 目录。
 
 不需要运行构建命令，.nojekyll 用于直接发布静态文件。资源路径使用相对路径，文章导航使用 URL hash，可在项目子目录中访问。
