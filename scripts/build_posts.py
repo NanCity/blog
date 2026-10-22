@@ -93,11 +93,11 @@ def main():
             posts.append(post)
     posts.sort(key=lambda p: (p["date"], p["id"]), reverse=True)
     OUTPUT.mkdir(exist_ok=True)
-    for filename in ("icon.svg", ".nojekyll", "gpt-usage.json"):
+    for filename in ("icon.svg", ".nojekyll"):
         shutil.copy2(ROOT / filename, OUTPUT / filename)
     # Each content change gets a new URL, so browsers cannot reuse an old loader.
     index = (ROOT / "index.html").read_text(encoding="utf-8")
-    for filename in ("app.js", "usage.js", "style.css"):
+    for filename in ("app.js", "style.css"):
         source = ROOT / filename
         content = source.read_bytes()
         digest = hashlib.sha256(content).hexdigest()[:12]
