@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-22T02:54:42+00:00",
+  "source": "OpenAI Codex account/usage/read",
+  "summary": {
+    "lifetimeTokens": 911445506,
+    "peakDailyTokens": 105515221,
+    "longestRunningTurnSec": 6058,
+    "currentStreakDays": 3,
+    "longestStreakDays": 10
+  },
+  "dailyUsageBuckets": [
+    {
+      "startDate": "2026-03-09",
+      "tokens": 15181722
+    },
+    {
+      "startDate": "2026-03-10",
+      "tokens": 4035453
+    },
+    {
+      "startDate": "2026-03-16",
+      "tokens": 11883903
+    },
+    {
+      "startDate": "2026-03-17",
+      "tokens": 4041151
+    },
+    {
+      "startDate": "2026-03-31",
+      "tokens": 769291
+    },
+    {
+      "startDate": "2026-04-01",
+      "tokens": 4617045
+    },
+    {
+      "startDate": "2026-04-02",
+      "tokens": 6205113
+    },
+    {
+      "startDate": "2026-04-03",
+      "tokens": 5851741
+    },
+    {
+      "startDate": "2026-04-07",
+      "tokens": 12859393
+    },
+    {
+      "startDate": "2026-04-08",
+      "tokens": 1755984
+    },
+    {
+      "startDate": "2026-04-09",
+      "tokens": 3077181
+    },
+    {
+      "startDate": "2026-04-14",
+      "tokens": 6848875
+    },
+    {
+      "startDate": "2026-09-09",
+      "tokens": 1298206
+    },
+    {
+      "startDate": "2026-09-10",
+      "tokens": 22814145
+    },
+    {
+      "startDate": "2026-09-11",
+      "tokens": 38421216
+    },
+    {
+      "startDate": "2026-09-12",
+      "tokens": 7380613
+    },
+    {
+      "startDate": "2026-09-14",
+      "tokens": 12131716
+    },
+    {
+      "startDate": "2026-09-15",
+      "tokens": 11618003
+    },
+    {
+      "startDate": "2026-09-16",
+      "tokens": 3627851
+    },
+    {
+      "startDate": "2026-09-17",
+      "tokens": 15835637
+    },
+    {
+      "startDate": "2026-09-18",
+      "tokens": 2516983
+    },
+    {
+      "startDate": "2026-09-20",
+      "tokens": 16856027
+    },
+    {
+      "startDate": "2026-09-21",
+      "tokens": 10185716
+    },
+    {
+      "startDate": "2026-09-22",
+      "tokens": 21685966
+    },
+    {
+      "startDate": "2026-09-23",
+      "tokens": 9572624
+    },
+    {
+      "startDate": "2026-09-24",
+      "tokens": 14796461
+    },
+    {
+      "startDate": "2026-09-28",
+      "tokens": 29433474
+    },
+    {
+      "startDate": "2026-09-29",
+      "tokens": 26665737
+    },
+    {
+      "startDate": "2026-09-30",
+      "tokens": 8752034
+    },
+    {
+      "startDate": "2026-10-08",
+      "tokens": 32725447
+    },
+    {
+      "startDate": "2026-10-09",
+      "tokens": 12886501
+    },
+    {
+      "startDate": "2026-10-10",
+      "tokens": 37883821
+    },
+    {
+      "startDate": "2026-10-11",
+      "tokens": 23767566
+    },
+    {
+      "startDate": "2026-10-12",
+      "tokens": 60305876
+    },
+    {
+      "startDate": "2026-10-13",
+      "tokens": 63447651
+    },
+    {
+      "startDate": "2026-10-14",
+      "tokens": 54042614
+    },
+    {
+      "startDate": "2026-10-15",
+      "tokens": 24917804
+    },
+    {
+      "startDate": "2026-10-16",
+      "tokens": 31624308
+    },
+    {
+      "startDate": "2026-10-17",
+      "tokens": 26418028
+    },
+    {
+      "startDate": "2026-10-19",
+      "tokens": 30726451
+    },
+    {
+      "startDate": "2026-10-20",
+      "tokens": 105515221
+    },
+    {
+      "startDate": "2026-10-21",
+      "tokens": 76464957
+    }
+  ]
+}

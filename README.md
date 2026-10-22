@@ -85,3 +85,32 @@ python -m http.server 8000 --directory _site
 ```
 
 然后打开 <http://localhost:8000>。请通过 HTTP 访问，直接双击 HTML 无法加载文章数据。
+
+## 我的 GPT 使用量
+
+导航栏“我的 GPT 使用量”在每次进入或再次点击时，重新读取 `gpt-usage.json`，并显示数据同步时间。页面不直接访问登录接口，不保存 ChatGPT 或 GitHub 凭据。请求失败时保留浏览器本次访问中最后成功读取的快照；没有成功数据时显示错误，不用零值代替。
+
+用量由你的电脑通过本机已登录的官方 Codex `account/usage/read` 采集。公开文件仅包含累计 Token、单日最高 Token、连续使用天数、最长任务时长和每日 Token 数；不包含账户邮箱、会话内容或登录凭据。部分指标可能由官方返回为空。
+
+### 本机自动同步
+
+在一个长期保留、没有其他本地改动的博客检出目录中执行：
+
+```powershell
+python scripts/sync_usage.py --publish
+powershell -NoProfile -File scripts/install_usage_sync.ps1
+```
+
+脚本依赖本机 Python 3.12+、Git 和官方 Codex，不需要第三方 Python 包。Codex 使用本机 ChatGPT 登录，Git 使用本机已经保存的 GitHub 登录。首次未登录时，先完成官方 Codex 和 GitHub 的正常登录流程。
+
+Windows 任务 `NanCyBlog-UsageSync` 会在登录时、以及每 30 分钟尝试同步一次。指标未变化时，最多保留 1 小时内的现有快照；发布后还需等待 GitHub Pages 部署。电脑关机、休眠、未登录、网络或授权失败时不会更新；网站仍展示上一次成功快照及时间，超过 2 小时显示提醒。
+
+同步只提交 `gpt-usage.json`。遇到其他本地改动或分支分叉时会停止，不自动覆盖。日志位于专用检出目录的 `.git/gpt-usage-sync.log`。
+
+停止自动同步：
+
+```powershell
+Disable-ScheduledTask -TaskName NanCyBlog-UsageSync
+```
+
+此采集器在个人电脑本地运行，不把 Codex 登录或 app-server 部署成网站后台。官方协议说明：<https://learn.chatgpt.com/docs/app-server#7-token-usage-chatgpt>。
